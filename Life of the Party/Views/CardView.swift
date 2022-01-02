@@ -15,7 +15,7 @@ struct CardView: View {
     
     var body: some View {
         VStack {
-            Text(player.name).font(.title).padding().foregroundColor(.green)
+            Text("\(player.name) \(player.emoji)").font(.title).padding().foregroundColor(.green)
             Text("\(card.type.rawValue) \(emojis[card.type]!)").font(.subheadline).padding().foregroundColor(.green)
             HStack {
                 Text(card.description).font(.subheadline).padding().foregroundColor(.green)
