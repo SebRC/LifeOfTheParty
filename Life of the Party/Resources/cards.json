@@ -1,0 +1,50 @@
+[
+ {
+     "description": "Who won the 2020 mens football Euros?",
+     "answer": "Italy",
+     "points": 3,
+     "type": "Trivia"
+ },
+ {
+     "description": "Who was named the best mens footballer of 2021?",
+     "answer": "Lionel Messi, Paris Saint Germain",
+     "points": 2,
+     "type": "Trivia"
+ },
+ {
+     "description": "Who was named the best womens footballer of 2021?",
+     "answer": "Alexia Putellas, Barcelona",
+     "points": 5,
+     "type": "Trivia"
+ },
+ {
+     "description": "Ed Sheeran, Bad Habits, 2021\nMy bad habits lead to ...",
+     "answer": "late nights ending alone",
+     "points": 2,
+     "type": "Lyrics"
+ },
+ {
+     "description": "Martin Luther King, 1963\nI have a ...",
+     "answer": "dream",
+     "points": 5,
+     "type": "Quote"
+ },
+ {
+     "description": "What is the most embarrasing thing you did as a child?",
+     "answer": "",
+     "points": 2,
+     "type": "Story"
+ },
+ {
+     "description": "Boom! Count up from 1 to 70 starting with the active player. Go clockwise through the group. Each time a number is divisible by 7 or contains 7 the person counting has to say Boom instead of the number. Every time someone says Boom, you start going counter clockwise if you were going clockwise and vice versa. So the active player starts by saying 1, then the person to the left of them will say 2 and the person to the left of them will say 3. Once it reaches 7 the person will have to say Boom and the order switches so the person to the right of them will have to say 8.",
+     "answer": "",
+     "points": 5,
+     "type": "Game"
+ },
+ {
+     "description": "Draw three animals! Each time someone guesses which animal you're drawing, both you and they get on epoint each.",
+     "answer": "",
+     "points": 1,
+     "type": "Game"
+ }
+]
