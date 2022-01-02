@@ -12,6 +12,7 @@ struct GameView: View {
     @State var player: Player
     @State private var card = cards.randomElement()!
     @State private var showAnswer = false
+    @State private var previousPlayer = ""
     
     var body: some View {
         VStack {
@@ -24,7 +25,11 @@ struct GameView: View {
                 }.buttonStyle(.bordered).foregroundColor(.gray)
                 Button("Next question") {
                     showAnswer = false
+                    previousPlayer = player.name
                     player = players.randomElement()!
+                    while(player.name == previousPlayer) {
+                        player = players.randomElement()!
+                    }
                     card = cards.randomElement()!
                 }.buttonStyle(.bordered).foregroundColor(.gray)
             }

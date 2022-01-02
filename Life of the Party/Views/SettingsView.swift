@@ -14,7 +14,7 @@ struct SettingsView: View {
     @State var playWithGames = true
     @State var playWithQuotes = true
     @State var nameInput = ""
-    @State var players = [Player(name: "Sebastians", emoji: "👨🏼‍💻"),
+    @State var players = [Player(name: "Sebastian", emoji: "👨🏼‍💻"),
                           Player(name: "Emilie", emoji: "👩🏼‍⚕️"),
                           Player(name: "Amalie", emoji: "👩‍👧‍👦"),]
     
