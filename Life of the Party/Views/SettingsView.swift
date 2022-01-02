@@ -38,9 +38,30 @@ struct SettingsView: View {
                     TypeToggle(state: $playWithQuotes, title: CardType.Quote.rawValue, description: "Finish famous quotes from throughout history.")
                     TypeToggle(state: $playWithGames, title: CardType.Game.rawValue, description: "Play with different types of quick games.")
                 }
-                NavigationLink("Confirm", destination: GameView(players: players, player: players.randomElement()!))
+                
+                NavigationLink("Confirm", destination: GameView(players: players, categories: constructCategories(), player: players.randomElement()!))
             }.padding()
         }
+    }
+    
+    func constructCategories() -> [CardType] {
+        var categories = [CardType]()
+        if(playWithGames) {
+            categories.append(CardType.Game)
+        }
+        if(playWithQuotes) {
+            categories.append(CardType.Quote)
+        }
+        if(playWithTrivia) {
+            categories.append(CardType.Trivia)
+        }
+        if(playWithLyrics) {
+            categories.append(CardType.Lyrics)
+        }
+        if(playWithStories) {
+            categories.append(CardType.Story)
+        }
+        return categories
     }
 }
 

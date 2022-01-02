@@ -42,7 +42,7 @@
      "type": "Game"
  },
  {
-     "description": "Draw three animals! Each time someone guesses which animal you're drawing, both you and they get on epoint each.",
+     "description": "Draw three animals! Each time someone guesses which animal you're drawing, both you and they get one point each.",
      "answer": "",
      "points": 1,
      "type": "Game"

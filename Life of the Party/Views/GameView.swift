@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameView: View {
     var players: [Player]
+    var categories: [CardType]
     @State var player: Player
     @State private var card = cards.randomElement()!
     @State private var showAnswer = false
@@ -30,19 +31,34 @@ struct GameView: View {
                     while(player.name == previousPlayer) {
                         player = players.randomElement()!
                     }
-                    card = cards.randomElement()!
+                    card = getRandomCard()
                 }.buttonStyle(.bordered).foregroundColor(.gray)
             }
+        }.onAppear(perform: {
+            card = getRandomCard()
+        })
+    }
+    
+    private func getRandomCard() -> Card {
+        let filteredCards = cards.filter {
+            return categories.contains($0.type)
         }
+        return filteredCards.randomElement()!
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @State static var playWithTrivia = true
+    @State static var playWithStories = true
+    @State static var playWithLyrics = true
+    @State static var playWithGames = true
+    @State static var playWithQuotes = true
+    
     static var previews: some View {
         Group {
             GameView(players: [Player(name: "Sebastian", emoji: "👨🏼‍💻"),
                                Player(name: "Emilie", emoji: "👩🏼‍⚕️"),
-                               Player(name: "Amalie", emoji: "👩‍👧‍👦")], player: Player(name: "Sebastian", emoji: "👨🏼‍💻"))
+                               Player(name: "Amalie", emoji: "👩‍👧‍👦")], categories: [CardType.Trivia, CardType.Story], player: Player(name: "Sebastian", emoji: "👨🏼‍💻"))
                 .previewInterfaceOrientation(.portrait)
         }
     }
