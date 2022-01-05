@@ -15,7 +15,7 @@ struct PlayerList: View {
             ForEach(players, id: \.id) { player in
                 PlayerRow(player: player)
             }.onDelete(perform: delete)
-        }.frame(minHeight: minRowHeight * CGFloat(players.count) * 2)
+        }.frame(minHeight: minRowHeight * CGFloat(players.count) * 2).overlay(RoundedRectangle(cornerRadius: 5).stroke(.green, lineWidth: 2)).padding()
     }
     
     func delete(at offsets: IndexSet) {

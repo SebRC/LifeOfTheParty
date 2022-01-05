@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
-    @Binding var player: Player
+    var player: Player
     @Binding var card: Card
     @Binding var showAnswer: Bool
     var emojis = [CardType.Trivia: "❓", CardType.Story: "📖", CardType.Lyrics: "🎶", CardType.Quote: "💬", CardType.Game: "🎮",]
@@ -29,10 +29,10 @@ struct CardView: View {
 }
 
 struct CardView_Previews: PreviewProvider {
-    @State static var activePlayer = Player(name: "Sebastian", emoji: "👨🏼‍💻")
+    static var activePlayer = Player(name: "Sebastian", emoji: "👨🏼‍💻")
     @State static private var activeCard = cards.randomElement()!
     @State static private var showAnswer = true
     static var previews: some View {
-        CardView(player: $activePlayer, card: $activeCard, showAnswer: $showAnswer)
+        CardView(player: activePlayer, card: $activeCard, showAnswer: $showAnswer)
     }
 }

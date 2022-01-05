@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var playWithTrivia = true
-    @State var playWithStories = true
-    @State var playWithLyrics = true
-    @State var playWithGames = true
-    @State var playWithQuotes = true
-    @State var nameInput = ""
-    @State var players = [Player(name: "Sebastian", emoji: "👨🏼‍💻"),
+    @State private var playWithTrivia = true
+    @State private var playWithStories = true
+    @State private var playWithLyrics = true
+    @State private var playWithGames = true
+    @State private var playWithQuotes = true
+    @State private var nameInput = ""
+    @State private var players = [Player(name: "Sebastian", emoji: "👨🏼‍💻"),
                           Player(name: "Emilie", emoji: "👩🏼‍⚕️"),
                           Player(name: "Amalie", emoji: "👩‍👧‍👦"),]
     
@@ -27,7 +27,7 @@ struct SettingsView: View {
                             players.append(Player(name: nameInput, emoji: "👨🏼‍💻"))
                         }
                         print(players.count)
-                    }.padding()
+                    }.overlay(RoundedRectangle(cornerRadius: 5).stroke(.green, lineWidth: 2)).padding()
                     
                     if(!players.isEmpty) {
                         PlayerList(players: $players)
@@ -39,7 +39,7 @@ struct SettingsView: View {
                     TypeToggle(state: $playWithGames, title: CardType.Game.rawValue, description: "Play with different types of quick games.")
                 }
                 
-                NavigationLink("Confirm", destination: GameView(players: players, categories: constructCategories(), player: players.randomElement()!))
+                NavigationLink("Confirm", destination: GameView(players: players, categories: constructCategories()))
             }.padding()
         }
     }

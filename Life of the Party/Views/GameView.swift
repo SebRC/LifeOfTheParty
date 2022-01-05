@@ -10,14 +10,14 @@ import SwiftUI
 struct GameView: View {
     var players: [Player]
     var categories: [CardType]
-    @State var player: Player
+    @State private var player = Player(name: "Sebastian", emoji: "👨🏼‍💻")
     @State private var card = cards.randomElement()!
     @State private var showAnswer = false
     @State private var previousPlayer = ""
     
     var body: some View {
         VStack {
-            CardView(player: $player, card: $card, showAnswer: $showAnswer)
+            CardView(player: player, card: $card, showAnswer: $showAnswer)
             Divider()
             Spacer()
             HStack(alignment: .bottom, spacing: 50) {
@@ -36,6 +36,7 @@ struct GameView: View {
             }
         }.onAppear(perform: {
             card = getRandomCard()
+            player = players.randomElement()!
         })
     }
     
@@ -58,7 +59,7 @@ struct ContentView_Previews: PreviewProvider {
         Group {
             GameView(players: [Player(name: "Sebastian", emoji: "👨🏼‍💻"),
                                Player(name: "Emilie", emoji: "👩🏼‍⚕️"),
-                               Player(name: "Amalie", emoji: "👩‍👧‍👦")], categories: [CardType.Trivia, CardType.Story], player: Player(name: "Sebastian", emoji: "👨🏼‍💻"))
+                               Player(name: "Amalie", emoji: "👩‍👧‍👦")], categories: [CardType.Trivia, CardType.Story])
                 .previewInterfaceOrientation(.portrait)
         }
     }
